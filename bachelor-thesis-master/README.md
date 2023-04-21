@@ -81,16 +81,16 @@
   * 为符合提交标准，将原模板中的中、英文摘要及目录页从目录中删去。
   * 将design-conclusion和references的字体及行间距调整为与正文统一。
   * 通过添加空白页以满足打印纸质版内容时从右侧奇数页开始章节的要求。
-* **2023.4.10
-  *在teseis-setting里面的必要库支持部分，加入了如下内容：
+* **2023.4.10**
+  * 在teseis-setting里面的必要库支持部分，加入了如下内容：
 
 \usepackage{xcolor}
 
 \usepackage{textgreek} % textgreek宏包提供了一些大写和小写的非数学模式下使用的希腊字母命令，这些命令可以在正文中直接使用，并与正文字体相同大小。输入时候按如下例子：'''$\textkappa$'''关于该宏包中公式的说明补充了textgreek.pdf文件在manual文件夹中。
 
 \definecolor{grey}{RGB}{128,128,128}%手动定义灰色,这样就保证了和word的页眉一样
-  *在thesis-setting.tex中插入了\usepackage{amsmath}库，在example.tex引言部分插入了\renewcommand{\theequation}{\thechapter-\arabic{equation}}%公式按章编号,并将编号设置为(1-1)这样的格式
-  *在添加插图与表格控制部分，使用
+  * 在thesis-setting.tex中插入了\usepackage{amsmath}库，在example.tex引言部分插入了\renewcommand{\theequation}{\thechapter-\arabic{equation}}%公式按章编号,并将编号设置为(1-1)这样的格式
+  * 在添加插图与表格控制部分，使用
 
 %\captionsetup[table]{labelfont=bf,textfont=bf}
 \usepackage{setspace}
