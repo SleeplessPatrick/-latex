@@ -1,0 +1,79 @@
+\documentclass[12pt,a4paper,openany,oneside]{book}
+
+% 格式控制
+\input{settings/thesis-setting}
+
+% 非格式控制插件
+% \usepackage{math-symbols}
+\usepackage{manuals/math-symbols}
+% 插图目录
+\graphicspath{{figures/}}
+
+% 仅用于测试
+\usepackage{blindtext}
+%\title{\textsf{比如我举个例子}}
+\author{{\kai 谁知道呢}}
+\date{May 20, 20xx}
+%\numberwithin{equation}{chapter}%公式按章编号
+\renewcommand{\theequation}{\thechapter-\arabic{equation}}%公式按章编号,并将编号设置为(1-1)这样的格式
+
+\begin{document}
+
+	\sloppy
+
+	\pagenumbering{Roman}
+
+	% 封皮
+	\frontmatter
+	\input{settings/cover.tex}
+	\clearpage 
+	\newpage
+	\clearpage
+	
+	
+	\setcounter{page}{1}
+	\renewcommand{\baselinestretch}{1.25}
+	
+	% 中文摘要
+	\include{preface/c_abstract}
+	% 英文摘要
+	\include{preface/e_abstract}
+	
+	\renewcommand{\baselinestretch}{1.25}
+	\fontsize{12pt}{12pt}\selectfont
+	\phantomsection%在目录中正确地添加超链接。如果不加该命令，目录中的某些章节可能无法被正确地点击
+	%\tableofcontents%自动生成目录，并且会根据之前定义的标题样式来排版各级标题
+	\tableofcontents%自动生成目录，并且会根据之前定义的标题样式来排版各级标题
+	\clearpage%命令表示在当前位置开始新页。这个命令通常用于控制页面布局，避免出现奇怪的断页
+	
+	\mainmatter%命令表示进入正文部分。在此之前的章节编号都是罗马数字，从1开始；在此之后的章节编号都是阿拉伯数字，从1开始。
+	
+	\renewcommand{\baselinestretch}{1.25}
+	\sHalfXiaosi\fSong
+	
+	% 正文内容
+	\input{chapters/chapter01.tex}
+	\input{chapters/chapter02.tex}
+	\input{chapters/chapter03.tex}
+	%\input{chapters/chapter04.tex}
+	%\input{chapters/chapter05.tex}
+	%\input{chapters/chapter06.tex}
+	% 参考文献设置
+	\clearpage
+	\phantomsection
+	\addcontentsline{toc}{chapter}{\fHei 参考文献}
+	\sXiaosi
+	% npu专用
+	\bibliographystyle{settings/nputhesis}
+	
+	% 参考文献位置
+	\bibliography{reference}
+	
+	% 附录
+	\backmatter
+	\input{appendix/design-conclusion.tex}
+	\input{appendix/acknowledgements.tex}
+	\sXiaosi
+	
+	\clearpage
+\end{document}
