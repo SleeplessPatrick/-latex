@@ -1,2 +1,2 @@
-# 阿巴阿巴
+# GraduationDesign
 nwpulatex
